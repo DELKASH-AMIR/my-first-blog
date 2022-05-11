@@ -7,11 +7,12 @@
         <header>
             <h1>Delkash Brothers</h1>
         </header>
-        <article>
-            <time>published: 11.5.2022, 1:56PM</time>
-            <h2><a href="" >My first Post</a></h2>
-            <p>Hi There. We are begining of the django learning</p>
-            
-        </article>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaks }}</p>
+            </article>
+        {% endfor %}
     </body>
 </html>
